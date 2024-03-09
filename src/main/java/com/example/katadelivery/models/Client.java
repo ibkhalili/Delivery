@@ -7,13 +7,14 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "Client")
+//@Table(name = "Client")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String email;
     private String password;
 }
