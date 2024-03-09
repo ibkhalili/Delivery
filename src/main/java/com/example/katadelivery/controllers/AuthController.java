@@ -25,4 +25,11 @@ public class AuthController {
         clientService.addClient(client);
         return ResponseEntity.ok("Client " + client.getEmail() + " est ajouté");
     }
+
+    @PostMapping("/signin")
+    public ResponseEntity<String> signIn(@Valid @RequestBody ClientDto client) {
+        log.info("Authenticating client [{}]...", client.getEmail());
+        clientService.addClient(client);
+        return ResponseEntity.ok("Client " + client.getEmail() + " ....TOKEN....");
+    }
 }
