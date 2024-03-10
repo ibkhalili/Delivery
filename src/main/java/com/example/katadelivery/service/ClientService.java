@@ -10,4 +10,5 @@ public interface ClientService {
 
     List<ClientDto> getAllClients();
 
+    ClientDto getUserProfile(String username);
 }

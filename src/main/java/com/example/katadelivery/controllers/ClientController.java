@@ -2,6 +2,7 @@ package com.example.katadelivery.controllers;
 
 import com.example.katadelivery.dto.ClientDto;
 import com.example.katadelivery.service.ClientService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 public class ClientController {
     private final ClientService clientService;
 
+    @SecurityRequirement(name = "deliveryApi")
     @GetMapping("/all")
     public ResponseEntity<List<ClientDto>> getAllClients() {
         log.info("Request to get all clients ...");
